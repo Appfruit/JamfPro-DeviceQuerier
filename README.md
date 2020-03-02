@@ -2,7 +2,8 @@
 Get redireted to the Jamf inventory record by specifying the device serial number.
 
 We wanted to use QR Codes as labels on our devices.
-![QR Code](./QR_Code_Example.png =100x)
+
+<img src=".//QR_Code_Example.png" height="100">
 
 In Jamf Pro, it is not possible to open an inventory record by specifying a device serial number.
 The url to a device record contains the jamf pro device id.
