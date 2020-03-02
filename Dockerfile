@@ -14,3 +14,5 @@ RUN sed -i -e 's/^expose_php\s*=.*/expose_php = Off/' "$PHP_INI_DIR/php.ini"
 # disable apache server verions
 RUN echo "ServerTokens Prod\n" >> /etc/apache2/apache2.conf
 RUN echo "ServerSignature Off\n" >> /etc/apache2/apache2.conf
+
+EXPOSE 80
