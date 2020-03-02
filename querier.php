@@ -53,6 +53,10 @@ switch ($_GET['type']){
     $RedirectURI = '/computers.html?id=';
     $ParsePatern = '<computer>';
     break;
+	default:
+		http_response_code(400);
+		exit(1);
+		break;
 }
 
 $query = $BackendURL . $APIEntrypoint . ($_GET['sn']);
@@ -64,8 +68,5 @@ $DeviceID = substr($respond, strpos($respond, $ParsePatern) + 0);
 preg_match('/<general><id>(.*?)<\/id>/', $DeviceID, $find);
 
 header("Location: $BackendURL$RedirectURI$find[1]&o=r", true, 307);
-
-//http://localhost:8000/querier.php?type=computer&sn=C07C515QJYW0
-//http://localhost:8000/querier.php?type=device&sn=DLXQWBQ3GMLD
 
 ?>
