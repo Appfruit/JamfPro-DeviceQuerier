@@ -1,7 +1,5 @@
 <?php
 $BackendURL = getenv('API_URL');
-$APIUser = getenv('API_User');
-$APIPassword = getenv('API_Password');
 
 function callAPI($method, $url, $data){
 		$curl = curl_init();
@@ -31,7 +29,7 @@ function callAPI($method, $url, $data){
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 		// Change service account before production
-		curl_setopt($curl, CURLOPT_USERPWD, "api-readdevices:ycEZhnRpeciUB0PHsCCk");
+		curl_setopt($curl, CURLOPT_USERPWD, getenv('API_User') . ":" . getenv('API_Password'));
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
 
 		// EXECUTE:
