@@ -51,6 +51,10 @@ switch ($_GET['type']){
     $RedirectURI = '/computers.html?id=';
     $ParsePatern = '<computer>';
     break;
+	case "health":
+	  http_response_code(200);
+		exit(1);
+	  break;
 	default:
 		http_response_code(400);
 		exit(1);
